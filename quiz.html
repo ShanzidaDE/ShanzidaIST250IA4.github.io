@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skincare Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    #quizForm {
+        margin-left: 0.5in;
+        background-color: rgba(172, 234, 190, 0.8); 
+    }
+    #result{
+        margin-left: 0.5in;
+        background-color: rgba(172, 234, 190, 0.8); 
+    }
+    #quizHeading {
+        text-align: center;
+        color: #3a6247; /* dark green text */
+        border-radius: 8px;
+    }
+
+    #quizInfo {
+        text-align: center;
+        margin-left: 1in;  
+        margin-right: 1in;
+        margin-bottom: 0.4in;
+        border-radius: 8px;
+    }
+  
+  </style>
+</head>
+<body>
+
+<!--Answer all questions pop up-->
+<div id="quizOverlay" class="overlay hidden">
+  <div class="popup">
+    <h2>Incomplete Quiz</h2>
+    <p>Please answer all the questions before submitting.</p>
+    <button id="closeQuizPopup" class="btn" onclick="closeOverlay()">Close</button>
+  </div>
+</div>
+
+<!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      Glow<br>Guide
+    </div>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="home.html" class="active">Home</a></li>
+      <li><a href="ingredients.html" >Ingredients 101</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+  
+<!--Quiz Form-->
+<div style="background-color:rgba(229, 229, 165, 0.8);">
+    <h1 id="quizHeading">Skincare Quiz</h1>
+    <p id="quizInfo">Our skin is unique. Nobody has the exact same skin as an individual. 
+        But we still fall into one of four major categories. And this skin type quiz will 
+        help us figure out how to characterize our unique skin so we can choose the proper skincare.</p>
+</div>
+<div style="margin-left: 1in;  margin-right: 1in; margin-bottom: 0.4in;">
+    <form id="quizForm">
+    <p>1) How does your skin feel after cleansing?</p>
+    <input type="radio" name="q1" value="dry"> Dry<br>
+    <input type="radio" name="q1" value="oily"> Oily<br>
+    <input type="radio" name="q1" value="balanced"> Balanced<br>
+
+    <p>2) What is your main skincare goal?</p>
+    <input type="radio" name="q2" value="hydrate"> Hydration<br>
+    <input type="radio" name="q2" value="clear"> Clear acne<br>
+    <input type="radio" name="q2" value="brighten"> Brighten skin<br>
+
+    <p>3) How often do you use sunscreen?</p>
+    <input type="radio" name="q3" value="daily"> Daily<br>
+    <input type="radio" name="q3" value="sometimes"> Sometimes<br>
+    <input type="radio" name="q3" value="never"> Never<br>
+
+    <p>4) How sensitive is your skin?</p>
+    <input type="radio" name="q4" value="low"> Not sensitive<br>
+    <input type="radio" name="q4" value="medium"> Sometimes sensitive<br>
+    <input type="radio" name="q4" value="high"> Very sensitive<br>
+
+    <p>5) What type of cleanser do you prefer?</p>
+    <input type="radio" name="q5" value="gel"> Gel<br>
+    <input type="radio" name="q5" value="cream"> Cream<br>
+    <input type="radio" name="q5" value="oil"> Oil<br>
+
+    <p>6) Biggest concern?</p>
+    <input type="radio" name="q6" value="acne"> Acne<br>
+    <input type="radio" name="q6" value="dryness"> Dryness<br>
+    <input type="radio" name="q6" value="aging"> Aging<br>
+
+    <p>7) How often do you exfoliate?</p>
+    <input type="radio" name="q7" value="never"> Never<br>
+    <input type="radio" name="q7" value="weekly"> Weekly<br>
+    <input type="radio" name="q7" value="often"> Often<br>
+
+    <p>8) What climate are you in?</p>
+    <input type="radio" name="q8" value="humid"> Humid<br>
+    <input type="radio" name="q8" value="dry"> Dry<br>
+    <input type="radio" name="q8" value="cold"> Cold<br>
+
+    <p>9) Do you use active ingredients?</p>
+    <input type="radio" name="q9" value="none"> None<br>
+    <input type="radio" name="q9" value="vitc"> Vitamin C<br>
+    <input type="radio" name="q9" value="retinol"> Retinol<br>
+
+    <p>10) Routine preference?</p>
+    <input type="radio" name="q10" value="minimal"> Minimal<br>
+    <input type="radio" name="q10" value="balanced"> Balanced<br>
+    <input type="radio" name="q10" value="long"> Long routine<br>
+
+    <br>
+    <button type="button" onclick="showResult()">Submit</button>
+    </form>
+ </div>
+
+    <h2 id="quizForm">Result:</h2>
+    <p id="result"></p>
+
+<!--Footer-->
+<footer>
+  <p>📍 123 Glow Street, Philadelphia, PA</p>
+  <p>Helping you discover your perfect skincare routine.</p>
+  <p>📞 (123) 456-7890 | ✉️ info@glowguide.com</p>
+</footer>
+
+<!--JavaScript-->
+  <script src="script.js"></script>
+  <script>
+    function showResult() {
+    let form = document.forms["quizForm"];
+
+    for (let i = 1; i <= 10; i++) {
+        let radios = form["q" + i];
+        let answered = false;
+
+        for (let j = 0; j < radios.length; j++) {
+        if (radios[j].checked) {
+            answered = true;
+            break;
+        }
+        }
+
+        if (!answered) {
+        document.getElementById("quizOverlay").classList.remove("hidden");
+        return;
+        }
+    }
+
+    let skinType = form["q1"].value;
+    let goal = form["q2"].value;
+    let sunscreen = form["q3"].value;
+
+    let message = "Your skin type seems " + skinType + ". ";
+    message += "Your main goal is " + goal + ". ";
+    message += (sunscreen !== "daily") ? "Try to use sunscreen more often!" : "Great job using sunscreen daily!";
+
+    document.getElementById("result").innerText = message;
+    }
+
+    function closeOverlay() {
+    document.getElementById("quizOverlay").classList.add("hidden");
+    }
+</script>
+
+</body>
+</html>

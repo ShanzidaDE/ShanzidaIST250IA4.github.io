@@ -1,0 +1,265 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+section.info p {
+    font-size:20px; 
+    line-height: 0.4in; 
+    text-align:left;       
+  }
+
+  section.info ol {        
+    text-align: left;
+    line-height: 0.4in; 
+    text-align:left;      
+  }
+
+/* Navigation */ 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background: #f8bbd0;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4a7c59;
+  line-height: 1.2;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0 auto; 
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #4a7c59;
+}
+
+.nav-links a.active {
+  color: #4a7c59;       
+  font-weight: bold;    
+  border-bottom: 2px solid #4a7c59;
+}
+
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+footer {
+  background-color: #b5aba1;  
+  text-align: center;
+  padding: 2px;
+  font-size: 8px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  line-height: 0.2;
+}
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #f8f8f8;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block; 
+  }
+
+  .nav-links.show {
+    display: flex; 
+  }
+  .overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none !important;
+}
+section.info {
+    padding: 5px;
+    background-color: #f8f4e3; 
+    text-align: center;      
+  }
+
+  section.info h2 {
+    font-size: 12px;           
+    margin-bottom: 4px;
+  }
+
+  section.info p {
+    font-size: 8px;           
+    line-height: 1;       
+  }
+
+  section.info ol {
+    font-size: 6px;
+    line-height: 1;
+    padding-left: 4px;        
+    text-align: left;          
+  }
+ .quizguide {
+    font-size:12px;
+ }
+
+
+.popup {
+  background: #fff;
+  width: min(60vw, 150px);  
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  padding: 8px;             
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #2e6332;
+  font-size: 12px;           
+}
+
+.popup p {
+  font-size: 8px;          
+}
+
+.btn {
+  margin-top: 6px;
+  padding: 8px 12px;       
+  border: none;
+  border-radius: 5px;
+  background: #67936f;
+  color: #fff;
+  font-weight: bold;
+  font-size: 8px;           
+  cursor: pointer;
+}
+}
+
+/* Pop up */
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        }
+    .hidden {
+        display: none !important;
+        }
+
+    .popup {
+      background: #fff;
+      width: min(90vw, 400px);
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #2e6332;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #67936f;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+/* Guide to take the quiz*/
+ .quizguide {
+  background-image: url('homeSkincareBackground.jpg'); 
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.quizguide-content {
+  background: rgba(0, 0, 0, 0.4); 
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.quizguide h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-weight: bold;
+  background-color: #4a7c59; 
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3a6247;
+  transform: scale(1.1);
+}
+
+.info {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #b5aba1;  
+  text-align: center;
+  padding: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  border-top: 1px solid #ddd;
+  line-height: 0.8;
+}

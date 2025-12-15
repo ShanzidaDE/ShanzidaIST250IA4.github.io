@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About the Website</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+   <style>
+    .about-header {
+      text-align: center;
+      padding: 20px 20px;
+      background-color: rgba(229, 229, 165, 0.8);
+      line-height: 0.2in;
+    }
+
+    .about-header h1 {
+      color: #4a7c59; 
+      filter: drop-shadow(0px 6px 6px rgba(0,0,0,0.5));
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .about-content img {
+      width: 350px;
+      border-radius: 15px;
+    }
+
+    .about-text {
+      max-width: 500px;
+    }
+
+    .about-text h2 {
+      color: #4a7c59;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      Glow<br>Guide
+    </div>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ingredients.html" >Ingredients 101</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+<!--Information-->
+
+  <div class="about-header">
+    <h1>About Glow Guide</h1>
+  </div>
+
+  <section class="about-content">
+    <img src="aboutPageSkincare.jpeg" alt="Skincare products">
+
+    <div class="about-text">
+      <h2>Our Mission</h2>
+      <p>
+        Glow Guide was created to help you discover your perfect skincare routine. 
+        From product recommendations to ingredient breakdowns, we provide clear, 
+        accessible information so you can make confident choices for your skin.
+      </p>
+      <p>
+        Explore our quizzes and skincare ingredient guides — all designed to 
+        make skincare simple, fun, and personalized.
+      </p>
+    </div>
+  </section>
+
+<!--Footer-->
+<footer>
+  <p>📍 123 Glow Street, Philadelphia, PA</p>
+  <p>Helping you discover your perfect skincare routine.</p>
+  <p>📞 (123) 456-7890 | ✉️ info@glowguide.com</p>
+</footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
